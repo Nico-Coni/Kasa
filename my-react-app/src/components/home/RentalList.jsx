@@ -8,11 +8,13 @@ export function RentalList() {
     const First6 = Rentals.slice(0, 6);
     return (
         <div className='gallery'>
-            {First6.map((rental) => (
-                <Link to={`/rental/${rental.id}`} key={rental.id}>
-                    < RentalCard key={rental.id} rental={rental} />
-                </Link>
-            ))}
+            <div className='rental-list'>
+                {First6.map((rental) => (
+                    <Link to={`/rental/${rental.id}`} key={rental.id}>
+                        < RentalCard key={rental.id} rental={rental} />
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 }

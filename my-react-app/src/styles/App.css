@@ -6,6 +6,7 @@
   gap: 30px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 @keyframes logo-spin {

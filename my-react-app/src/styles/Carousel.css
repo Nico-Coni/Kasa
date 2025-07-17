@@ -1,0 +1,38 @@
+.carousel-container {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1240px;
+  max-height: 450px;
+  position: relative;
+}
+.carousel-container img {
+  width: 100%;
+  height: 100%;
+  max-width: 1240px;
+  object-fit: cover;
+  position: relative;
+}
+.carousel-container .carousel-button {
+  position: relative;
+  color: white;
+  font-size: 100px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+  background-color: transparent;
+  outline: none;
+}
+.carousel-container .right {
+  position: absolute;
+  right: 0;
+}
+.carousel-container .left {
+  position: absolute;
+  left: 0;
+}/*# sourceMappingURL=Carousel.css.map */
