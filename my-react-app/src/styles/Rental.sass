@@ -1,12 +1,11 @@
-@import './variables.sass'
+@use 'Variables'
 
 .rental-container
     display: flex
     flex-direction: column
-    width: 100%
-    max-width: 1440px
     justify-content: center
     align-items: center
+    gap: 20px
 
 .rental-details
     display: flex
@@ -17,13 +16,12 @@
     justify-content: space-between
 
 .rental-name
-    margin-top: 20px
     gap: 10px
     display: flex
     flex-direction: column
     .rental-title
         font-size: 36px
-        color: $primary-color
+        color: Variables.$primary-color
         font-weight: 500
         margin: 0
 
@@ -44,7 +42,7 @@
         gap: 10px
         .host-name
             font-size: 18px
-            color: $primary-color
+            color: Variables.$primary-color
             font-weight: 500
             margin: 0
         .host-picture
@@ -60,3 +58,18 @@
     justify-content: space-between
     .about-details
         width: 33rem
+
+@media screen and ( max-width: Variables.$breakpoint)
+    .rental-container
+        width: 100%
+
+    .rental-host
+        flex-direction: row-reverse
+        justify-content: space-between
+        width: 100%
+
+    .rental-description
+        gap: 20px
+        .about-details
+            padding: 0px
+            width: 25rem

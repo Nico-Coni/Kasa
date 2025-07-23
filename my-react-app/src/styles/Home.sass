@@ -1,3 +1,5 @@
+@use 'Variables'
+
 .img-banner
     position: relative
     width: 100%
@@ -43,3 +45,16 @@
     flex-direction: column
     align-items: center
     gap: 30px
+
+@media screen and ( max-width: Variables.$breakpoint)
+    .home-container
+        gap: 0px
+    .img-banner
+        max-height: 150px
+        border-radius: 15px
+        img
+            top: 0px
+
+    .overlay
+        .overlay-text
+            font-size: 1.5rem

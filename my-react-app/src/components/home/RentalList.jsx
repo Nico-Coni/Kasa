@@ -1,7 +1,7 @@
 import RentalCard from './RentalCard.jsx';
 import data from '../../data/data.json';
 import { Link } from 'react-router-dom';
-import '../../styles/Gallery.css';
+import '../../styles/Gallery.sass';
 
 export function RentalList() {
     const Rentals = data.Rentals;

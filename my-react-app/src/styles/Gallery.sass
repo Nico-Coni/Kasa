@@ -1,3 +1,5 @@
+@use 'Variables'
+
 .gallery
     display: flex
     flex-wrap: wrap
@@ -14,3 +16,7 @@
     display: flex
     flex-wrap: wrap
     justify-content: center
+
+@media screen and (max-width: Variables.$breakpoint)
+    .gallery
+        background-color: white

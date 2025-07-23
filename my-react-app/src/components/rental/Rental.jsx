@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import data from '../../data/data.json';
 import { Carousel } from './Carousel.jsx';
-import '../../styles/Rental.css';
+import '../../styles/Rental.sass';
 import { RentalTags } from "./RentalTags.jsx";
 import { RentalRating } from "./RentalRating.jsx";
 import { Collapsible } from '../commun/Collapsible.jsx';

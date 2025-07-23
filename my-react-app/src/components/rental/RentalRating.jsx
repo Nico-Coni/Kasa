@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import '../../styles/RentalRating.css';
+import '../../styles/RentalRating.sass';
 
 export function RentalRating({ rating }) {
     const stars = Array.from({ length: 5 }, (_, index) => {

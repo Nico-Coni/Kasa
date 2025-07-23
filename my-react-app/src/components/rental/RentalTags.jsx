@@ -1,4 +1,4 @@
-import '../../styles/RentalTags.css';
+import '../../styles/RentalTags.sass';
 
 export function RentalTags({ tags }) {
     return (

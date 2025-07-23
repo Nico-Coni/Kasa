@@ -1,3 +1,5 @@
+@use 'Variables'
+
 .carousel-container
     display: flex
     flex-direction: row
@@ -10,6 +12,7 @@
     max-height: 450px
     position: relative
     background-color: #E3E3E3
+    border-radius: 10px
 
     img
         width: 100%
@@ -52,3 +55,10 @@
     opacity: 1
     &.fade
         opacity: 0
+
+@media screen and ( max-width: Variables.$breakpoint)
+    .carousel-container
+        width: 100%
+
+        .carousel-button
+            font-size: 48px

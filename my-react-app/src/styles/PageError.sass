@@ -1,9 +1,10 @@
-@import './variables.sass'
+@use 'Variables'
 
 .page-error
     display: flex
     flex-direction: column
     width: 100%
+    gap: 1rem
 
 .error-content
     display: flex
@@ -12,11 +13,11 @@
     gap: 5rem
     h1
         font-size: 288px
-        color: $primary-color
+        color: Variables.$primary-color
         margin: 0
     p
         font-size: 36px
-        color: $primary-color
+        color: Variables.$primary-color
         margin: 0
         margin-top: 20px
 
@@ -24,3 +25,19 @@
     color: black
     text-decoration: underline
     margin-bottom: 2rem
+
+@media screen and (max-width: Variables.$breakpoint)
+    .page-error
+
+        gap: 5rem
+
+    .error-content
+        h1
+            font-size: 96px
+        p
+            font-size: 18px
+            width: 80%
+            text-align: center
+        .link-error
+            font-size: 14px
+            margin-bottom: 1rem

@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import '../../styles/App.css'
+import '../../styles/App.sass'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Single } from '../rental/Rental.jsx'
 import { Layout } from '../commun/Layout.jsx'

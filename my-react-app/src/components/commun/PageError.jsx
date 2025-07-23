@@ -2,7 +2,7 @@ import { useRouteError } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Banner } from "./Banner";
 import { Footer } from "./Footer";
-import '../../styles/PageError.css';
+import '../../styles/PageError.sass';
 
 export function PageError() {
     const error = useRouteError()

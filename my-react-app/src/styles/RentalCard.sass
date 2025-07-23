@@ -1,3 +1,5 @@
+@use 'Variables'
+
 .rental-card
     display: flex
     justify-content: center
@@ -29,3 +31,13 @@
         color: white
         font-size: 22px
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7)
+
+@media screen and (max-width: Variables.$breakpoint)
+    .rental-card
+        width: 100%
+        height: 265px
+        margin: 0
+        h2
+            top: 185px
+            left: 10px
+            font-size: 18px

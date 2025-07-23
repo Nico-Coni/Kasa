@@ -1,4 +1,4 @@
-import '../../styles/Collapsible.css';
+import '../../styles/Collapsible.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect, useRef } from 'react';

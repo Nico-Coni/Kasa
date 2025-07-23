@@ -1,5 +1,5 @@
 import logoFooter from '../../assets/Logo_footer.svg';
-import '../../styles/Footer.css';
+import '../../styles/Footer.sass';
 
 export function Footer() {
     return (

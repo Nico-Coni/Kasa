@@ -1,3 +1,5 @@
+@use 'Variables' 
+
 .banner
     display: flex
     flex-direction: row
@@ -8,10 +10,21 @@
     width: 100%
     position: relative
 
+nav
+    display: flex
+    flex-direction: row
+    gap: 10px
 .navlink
-    padding-left: 20px
     color: black
     font-size: 24px
 
 .active
     text-decoration: underline
+
+@media screen and ( max-width: Variables.$breakpoint)
+    .banner
+        img
+            width: 9rem
+            height: auto
+    .navlink
+        font-size: 18px

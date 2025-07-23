@@ -1,6 +1,6 @@
 import logoBanner from '../../assets/Logo_banner.svg';
 import { NavLink } from "react-router-dom";
-import '../../styles/Banner.css';
+import '../../styles/Banner.sass';
 
 export function Banner() {
     return (

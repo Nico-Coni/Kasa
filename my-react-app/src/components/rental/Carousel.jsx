@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../../styles/Carousel.css';
+import '../../styles/Carousel.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,18 +20,15 @@ export function Carousel({ picturesCount, rental }) {
     // Utiliser % pour éviter les erreurs d'index
     // et pour permettre le passage de la dernière à la première image
     function next() {
-        // setCurrentIndex((prevIndex) => (prevIndex + 1) % picturesCount
-        // );
         setIsFading(true);
         setTimeout(() => {
             setDisplayedIndex((currentIndex + 1) % picturesCount);
             setCurrentIndex((prevIndex) => (prevIndex + 1) % picturesCount);
             setIsFading(false);
-        }, 300); // durée de la transition (en ms)
+        }, 300);
     }
 
     function prev() {
-        // setCurrentIndex((prevIndex) => (prevIndex - 1 + picturesCount) % picturesCount);
         setIsFading(true);
         setTimeout(() => {
             setDisplayedIndex((currentIndex - 1 + picturesCount) % picturesCount);

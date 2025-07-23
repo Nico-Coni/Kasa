@@ -1,4 +1,4 @@
-import '../../styles/RentalCard.css';
+import '../../styles/RentalCard.sass';
 function RentalCard({ rental }) {
     return (
         <div className="rental-card">

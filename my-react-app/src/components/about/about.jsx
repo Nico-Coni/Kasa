@@ -1,5 +1,5 @@
 import mountain from '../../assets/Image_banner_valley.svg';
-import '../../styles/About.css';
+import '../../styles/About.sass';
 import { Collapsible } from '../commun/Collapsible';
 import data from '../../data/data.JSON';
 
