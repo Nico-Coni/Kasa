@@ -2,7 +2,7 @@
   "name": "my-react-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Nico-Coni.github.io/Kasa",
+  "homepage": "https://nico-coni.github.io/Kasa",
   "type": "module",
   "scripts": {
     "dev": "vite",
