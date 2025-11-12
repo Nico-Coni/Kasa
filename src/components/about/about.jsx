@@ -1,7 +1,7 @@
 import mountain from '../../assets/Image_banner_valley.svg';
 import '../../styles/About.sass';
 import { Collapsible } from '../commun/Collapsible';
-import data from '../../data/data.JSON';
+import data from '../../data/data.json';
 
 export function About() {
     const aboutData = data.About;
