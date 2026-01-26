@@ -3,49 +3,61 @@ import '../../styles/Carousel.sass';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-export function Carousel({ picturesCount, rental }) {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const index = currentIndex % picturesCount;
-    const [isFading, setIsFading] = useState(false);
-    const [displayedIndex, setDisplayedIndex] = useState(0);
+export function Carousel({ rental }) {
+    const pictures = rental.pictures;
+    const picturesCount = pictures.length;
 
-    // Precharge les images pour éviter le changement de taille lors du chargement
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isVisible, setIsVisible] = useState(true);
+
+    const changeImage = (newIndex) => {
+        if (!isVisible) return; // anti spam clic
+
+        setIsVisible(false); // fade out
+
+        setTimeout(() => {
+            setCurrentIndex(newIndex);
+            setIsVisible(true); // fade in
+        }, 300);
+    };
+
+    const next = () => {
+        changeImage((currentIndex + 1) % picturesCount);
+    };
+
+    const prev = () => {
+        changeImage(
+            (currentIndex - 1 + picturesCount) % picturesCount
+        );
+    };
+
+    // Préchargement (1 seule fois)
     useEffect(() => {
-        rental.pictures.forEach((src) => {
+        pictures.forEach((src) => {
             const img = new Image();
             img.src = src;
-        })
-    })
-
-    // Utiliser % pour éviter les erreurs d'index
-    // et pour permettre le passage de la dernière à la première image
-    function next() {
-        setIsFading(true);
-        setTimeout(() => {
-            setDisplayedIndex((currentIndex + 1) % picturesCount);
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % picturesCount);
-            setIsFading(false);
-        }, 300);
-    }
-
-    function prev() {
-        setIsFading(true);
-        setTimeout(() => {
-            setDisplayedIndex((currentIndex - 1 + picturesCount) % picturesCount);
-            setCurrentIndex((prevIndex) => (prevIndex - 1 + picturesCount) % picturesCount);
-            setIsFading(false);
-        }, 300);
-    }
+        });
+    }, [pictures]);
 
     return (
-        <div className='carousel-container'>
-            <button onClick={prev} className='carousel-button left'><FontAwesomeIcon icon={faChevronLeft} /></button>
+        <div className="carousel-container">
+            <button onClick={prev} className="carousel-button left">
+                <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+
             <div className="carousel">
                 <div className="carousel-item">
-                    <img src={rental.pictures[displayedIndex]} key={index} alt={rental.title} className={`img-carousel ${isFading ? 'fade' : ''}`} />
+                    <img
+                        src={pictures[currentIndex]}
+                        alt={rental.title}
+                        className={`img-carousel ${isVisible ? "show" : "hide"}`}
+                    />
                 </div>
             </div>
-            <button onClick={next} className='carousel-button right'><FontAwesomeIcon icon={faChevronRight} /></button>
+
+            <button onClick={next} className="carousel-button right">
+                <FontAwesomeIcon icon={faChevronRight} />
+            </button>
         </div>
     );
 }
